@@ -5,7 +5,7 @@ MONGO_CONNECTION_STRING = 'mongodb+srv://aditya:aditya2004@cluster0.lgjqzvz.mong
 
 mongo_client = MongoClient(MONGO_CONNECTION_STRING)
 
-database = mongo_client['Cricket-quiz']
+database = mongo_client['CricketQuiz']
 users_collection = database['Users']
 
 
