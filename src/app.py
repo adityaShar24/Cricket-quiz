@@ -19,7 +19,6 @@ app.before_request(register_middleware)
 app.before_request(login_middleware)
 
 app.register_blueprint(auth_bp)
-app.register_blueprint(quiz_bp)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0' , debug= True)
