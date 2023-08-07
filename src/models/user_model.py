@@ -1,12 +1,13 @@
 from database.mongo import users_collection
 
 class User:
-    def __init__(self , username , password):
+    def __init__(self , username , password , role='basic'):
         self.username = username
         self.password = password
+        self.role = role
         
     def save_user(self):
-        user_id = users_collection.insert_one({'username':self.username , 'password':self.password}).inserted_id
+        user_id = users_collection.insert_one({'username':self.username , 'password':self.password , 'role':self.role}).inserted_id
         return user_id
     
     def find_by_username(username):
