@@ -11,6 +11,8 @@ USERNAME_NOT_EXISTS_ERROR = 'username does not exists, please enter a valid user
 QUESTION_INPUT_MISSING_ERROR = 'Please enter a question.'
 OPTIONS_MISSING_ERROR = 'Please enter options.'
 CORRECT_OPTION_MISSING_ERROR = 'Please specify the correct option for the question.'
+USER_MISSING_ERROR = "No user found."
+INVALID_PASSWORD_ERROR = "Invalid password."
 
 
 REGISTER_ENDPOINT = 'auth_bp.register_user_wrapper'
