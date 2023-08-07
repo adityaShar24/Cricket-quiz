@@ -9,3 +9,6 @@ class User:
         user_id = users_collection.insert_one({'username':self.username , 'password':self.password}).inserted_id
         return user_id
     
+    def find_by_username(username):
+        user = users_collection.find_one({'username':username})
+        return user
