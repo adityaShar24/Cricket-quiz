@@ -13,3 +13,8 @@ class User:
     def find_by_username(username):
         user = users_collection.find_one({'username':username})
         return user
+    
+    def get_all_users():
+        users = users_collection.find()
+        list_all_users = list(users)
+        return list_all_users
