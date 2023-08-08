@@ -29,3 +29,8 @@ def login():
     access_token = create_access_token(identity=username , fresh=datetime.timedelta(minutes=30))
     print(access_token)
     return make_response({'message':{'access token':access_token}} , HTTP_201_CREATED)
+
+def get_all_users():
+    users = User.find_all_users()
+    json_version = json_util.dumps(users)
+    return make_response({'all users':json_version} , HTTP_201_CREATED)
