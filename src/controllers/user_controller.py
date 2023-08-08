@@ -18,7 +18,7 @@ def login():
     body = json.loads(request.data)
     username = body['username']
     password = body['password']
-    user = User(username , password)
+    user = User.find_by_username(username)
     
     if not user:
         return make_response({'message': USER_MISSING_ERROR} , HTTP_400_BAD_REQUEST)
@@ -27,4 +27,5 @@ def login():
         return make_response({'message':INVALID_PASSWORD_ERROR} , HTTP_400_BAD_REQUEST)
     
     access_token = create_access_token(identity=username , fresh=datetime.timedelta(minutes=30))
-    return make_response({'message':{'access_token':access_token}} , HTTP_201_CREATED)
+    print(access_token)
+    return make_response({'message':{'access token':access_token}} , HTTP_201_CREATED)
