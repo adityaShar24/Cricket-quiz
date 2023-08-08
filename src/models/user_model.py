@@ -18,3 +18,4 @@ class User:
         users = users_collection.find()
         list_all_users = list(users)
         return list_all_users
+    
