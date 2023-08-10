@@ -1,5 +1,7 @@
 HTTP_201_CREATED = 201
 HTTP_400_BAD_REQUEST = 400
+HTTP_405_FORBIDDEN = 405
+
 
 USERNAME_MISSING_ERROR = 'Please enter username'
 PASSWORD_MISSING_ERROR = 'Please enter password'
@@ -28,3 +30,5 @@ INCORRECT_OPTION_MESSAGE ='Your answer is incorrect.'
 
 CONNECTED_TO_MONGODB = 'Connection to MongoDb Successful!'
 CONNECTION_FAILED = 'Failed to Connect'
+
+ACCESS_FORBIDDEN = "You are not allowed to access this endpoint."
