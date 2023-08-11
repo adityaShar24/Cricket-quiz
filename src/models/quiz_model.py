@@ -19,4 +19,10 @@ class Answer():
         
     def save_answer(self):
         answer_id = answers_collection.insert_one({'questionId':self.questionId , 'selected_option':self.selected_option , 'userId':self.userId}).inserted_id
-        return answer_id
+        return answer_id  
+    
+    def is_correct(self):
+        question = questions_collection.find_one({'_id': self.questionId})
+        correct_option = question['correct_option']
+        is_correct = self.selected_option == correct_option
+        return is_correct
