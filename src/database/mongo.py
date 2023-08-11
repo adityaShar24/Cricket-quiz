@@ -8,6 +8,7 @@ mongo_client = MongoClient(MONGO_CONNECTION_STRING)
 database = mongo_client['CricketQuiz']
 users_collection = database['Users']
 questions_collection = database['Questions']
+answers_collection = database['Answers']
 
 
 try:
