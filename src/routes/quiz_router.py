@@ -7,8 +7,8 @@ from auth.admin import admin_only
 quiz_bp = Blueprint('quiz_bp' , __name__)
 
 @quiz_bp.post('/create_question')
-# @jwt_required()
-# @admin_only(role='admin')
+@jwt_required()
+@admin_only(role='admin')
 def create_question_wrapper():
     return create_question()
 
