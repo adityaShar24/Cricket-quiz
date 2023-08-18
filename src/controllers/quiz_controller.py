@@ -2,7 +2,7 @@
 from flask import request, make_response, json
 from models.quiz_model import Question , Answer
 from flask_jwt_extended import get_jwt
-from utils.constants import HTTP_201_CREATED, QUESTION_CREATED_MESSAGE , ACCESS_FORBIDDEN , HTTP_405_FORBIDDEN , CORRECT_OPTION_MESSAGE , INCORRECT_OPTION_MESSAGE
+from utils.constants import HTTP_201_CREATED, QUESTION_CREATED_MESSAGE , ACCESS_FORBIDDEN , HTTP_405_FORBIDDEN , CORRECT_OPTION_MESSAGE , INCORRECT_OPTION_MESSAGE , FETCHED_QUESTIONS_MESSAGE
 import bson.json_util as json_util
 from models.user_model import User
 
@@ -38,5 +38,14 @@ def submit_answer():
     else:
         response_message = INCORRECT_OPTION_MESSAGE
     return make_response({'message': response_message , 'answer': json_version} , HTTP_201_CREATED)
+
+def random_questions():
+    questions = Question.get_random_questions()
+    questions_list = []
     
+    for question in questions:
+        questions_list.append(question)
+    json_version = json_util.dumps(Question)
+    return make_response({'message': FETCHED_QUESTIONS_MESSAGE , 'Questions':json_version} , HTTP_201_CREATED)
+
     
