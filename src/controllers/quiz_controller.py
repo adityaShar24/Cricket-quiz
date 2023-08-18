@@ -45,7 +45,7 @@ def random_questions():
     
     for question in questions:
         questions_list.append(question)
-    json_version = json_util.dumps(Question)
+    json_version = json_util.dumps(questions_list)
     return make_response({'message': FETCHED_QUESTIONS_MESSAGE , 'Questions':json_version} , HTTP_201_CREATED)
 
     
