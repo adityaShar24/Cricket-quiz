@@ -2,7 +2,6 @@ HTTP_201_CREATED = 201
 HTTP_400_BAD_REQUEST = 400
 HTTP_405_FORBIDDEN = 405
 
-
 USERNAME_MISSING_ERROR = 'Please enter username'
 PASSWORD_MISSING_ERROR = 'Please enter password'
 USER_ID_MISSING_ERROR = 'userId should not be empty'
@@ -25,6 +24,8 @@ SUBMIT_ANSWER_ENDPOINT = 'quiz_bp.submit_answer_wrapper'
 
 USER_REGISTERED_MESSAGE = "user {username} has been registered successfully!"
 QUESTION_CREATED_MESSAGE = 'Question created successfully.'
+FETCHED_QUESTIONS_MESSAGE ="Question Fetched Successfully!"
+
 CORRECT_OPTION_MESSAGE = 'Correct! Your answer is correct.'
 INCORRECT_OPTION_MESSAGE ='Your answer is incorrect.'
 
@@ -32,3 +33,4 @@ CONNECTED_TO_MONGODB = 'Connection to MongoDb Successful!'
 CONNECTION_FAILED = 'Failed to Connect'
 
 ACCESS_FORBIDDEN = "You are not allowed to access this endpoint."
+
