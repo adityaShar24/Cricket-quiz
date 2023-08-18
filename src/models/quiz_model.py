@@ -9,6 +9,10 @@ class Question:
     def save_question(self):
         question_id = questions_collection.insert_one({'question':self.question , 'options': self.options , 'correct_option': self.correct_option}).inserted_id
         return question_id
+
+    def get_random_questions():
+        questions = questions_collection.aggregate([{ "$sample": { "size": 5 } }])
+        return questions
     
 class Answer():
     def __init__(self , questionId , selected_option , userId):
