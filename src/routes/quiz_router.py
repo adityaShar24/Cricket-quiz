@@ -26,5 +26,5 @@ def get_questions_wrapper():
 
 
 @quiz_bp.get('/start_quiz')
-def get_questions_wrapper():
+def get_random_questions_wrapper():
     return random_questions()
