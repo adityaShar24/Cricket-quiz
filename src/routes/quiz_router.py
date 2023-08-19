@@ -20,6 +20,11 @@ def render_create_question():
 def submit_answer_wrapper():
     return submit_answer()
 
+@quiz_bp.get('/questions')
+def get_questions_wrapper():
+    return random_questions()
+
+
 @quiz_bp.get('/start_quiz')
 def get_questions_wrapper():
     return random_questions()
