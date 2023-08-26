@@ -8,39 +8,40 @@
 <body>
     <div class="main-container">
         <div class="question-container">
+            <div class="answer-conatainer">
+            </div>
         </div>
     </div>
     <script>
         const url = "/questions";
         const mainBlock = document.querySelector(".main-container")
-        const questions = document.querySelector(".question-container")
+        const Ques = document.querySelector(".question-container")
         const answers = document.querySelector(".answer-container")
 
 
-        async function makeRequest() {
-            // Clear previous content
-            mainBlock.innerHTML = "";
-        
+        async function makeRequest() {        
             const response = await fetch(url);
             const data = await response.json();
             const questions = JSON.parse(data.Questions);
         
             for (let question of questions) {
-                const optionsContainer = document.createElement('div');
-                const para = document.createElement('p');
-                para.innerText = question["question"];
-        
+                const questionPara = document.createElement('p');
+                questionPara.innerText = question["question"];
+                mainBlock.appendChild(questionPara);
+            
+                const optionsContainer = document.createElement('div'); // Create a container for options
+            
                 for (let option of question["options"]) {
                     const optionPara = document.createElement('p');
                     optionPara.innerText = option;
                     optionsContainer.appendChild(optionPara);
                 }
-        
-                mainBlock.appendChild(para);
-                mainBlock.appendChild(optionsContainer);
+            
+                mainBlock.appendChild(optionsContainer); // Add the options container to the main block
             }
-        }
         
+        }
+
         makeRequest();
 
     </script>
