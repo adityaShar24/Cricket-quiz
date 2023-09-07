@@ -3,7 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 from flask_jwt_extended import JWTManager
-from middlewares.user_middleware import register_middleware , login_middleware
+from middlewares.user_middleware import register_middleware , login_middleware ,create_question_middleware , submit_answer_middleware
 from routes.user_router import auth_bp , cache
 
 app = Flask(__name__)
@@ -17,6 +17,8 @@ cache.init_app(app)
 
 app.before_request(register_middleware)
 app.before_request(login_middleware)
+app.before_request(create_question_middleware)
+app.before_request(submit_answer_middleware)
 
 app.register_blueprint(auth_bp)
 
