@@ -73,7 +73,8 @@ Before you begin, ensure you have met the following requirements:
 3. Start The Apllication:
 
     ```shell
-    cd Cricket-Quiz
+    cd python app.py
+    
 
 ### Usage
 
